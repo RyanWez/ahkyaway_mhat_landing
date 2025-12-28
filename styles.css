@@ -674,9 +674,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeSlideUp 1s var(--ease-out) forwards;
-    animation-delay: 0.4s;
-    opacity: 0;
+    /* Removed fade-in animation to fix Mobile LCP issue */
+    /* Floating animation is preserved on .hero-screenshot */
 }
 
 .hero-image-wrapper {
