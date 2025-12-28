@@ -1,0 +1,21 @@
+{
+  "name": "AhKyaway Mhat",
+  "short_name": "AkMhat",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#6366F1",
+  "description": "A beautiful debt tracking app for small businesses and communities.",
+  "icons": [
+    {
+      "src": "assets/icons/app_icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/app_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
