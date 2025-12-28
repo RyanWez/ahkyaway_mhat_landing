@@ -79,6 +79,7 @@
 
     /* Transitions */
     --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: 150ms var(--ease-out);
     --transition-base: 300ms var(--ease-out);
 
@@ -855,9 +856,7 @@ img {
 
 /* Improved Carousel Slide with Float Effect */
 .carousel-slide {
-    flex: 0 0 280px;
-    /* Usage of fixed width for clearer consistency, or keep responsive */
-    /* Let's keep it responsive but tighter */
+    /* Responsive width for carousel slides */
     flex: 0 0 70%;
     max-width: 800px;
     border-radius: 30px;
