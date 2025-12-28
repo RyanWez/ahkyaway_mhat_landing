@@ -33,7 +33,7 @@ const translations = {
         },
         footer: {
             made: "Made with ❤️ using Flutter",
-            copyright: "© 2025 AhKyaway Mhat. MIT License."
+            copyright: "© 2025 AhKyaway Mhat."
         }
     },
     my: {
@@ -69,7 +69,7 @@ const translations = {
         },
         footer: {
             made: "Flutter ဖြင့် ❤️ နဲ့ ဖန်တီးထားပါသည်",
-            copyright: "© 2025 အကြွေးမှတ်။ MIT License။"
+            copyright: "© 2025 အကြွေးမှတ်။"
         }
     }
 };

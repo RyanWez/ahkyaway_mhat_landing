@@ -447,11 +447,7 @@ img {
         linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
-/* Remove old orbs */
-.gradient-orb {
-    display: none;
-}
-
+/* Grid and gradient background handled by .hero-background */
 .hero-container {
     position: relative;
     z-index: 1;

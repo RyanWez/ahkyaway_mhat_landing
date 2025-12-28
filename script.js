@@ -73,7 +73,7 @@ async function getLatestReleaseUrl() {
         // Return the best match or fallback to the releases page
         return (arm64 || universal || anyApk)?.browser_download_url || fallbackUrl;
     } catch (error) {
-        console.error('Error fetching release:', error);
+        // Silently fail and use fallback URL
         return fallbackUrl;
     }
 }
@@ -425,33 +425,7 @@ function initScrollReveal() {
     reveals.forEach(el => observer.observe(el));
 }
 
-// ===================================
-// Parallax Effect for Orbs
-// ===================================
-
-function initParallax() {
-    const orbs = document.querySelectorAll('.gradient-orb');
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-    }
-
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const scrollY = window.pageYOffset;
-                orbs.forEach((orb, index) => {
-                    const speed = 0.1 + (index * 0.05);
-                    orb.style.transform = `translateY(${scrollY * speed}px)`;
-                });
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-}
+// Parallax removed - gradient orbs no longer used
 
 // ===================================
 // Initialize
@@ -478,9 +452,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize scroll reveal
     initScrollReveal();
-
-    // Initialize parallax (subtle)
-    initParallax();
 
     // Theme toggle button
     const themeToggle = document.getElementById('theme-toggle');
