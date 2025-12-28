@@ -84,23 +84,36 @@ async function handleDownload(e) {
 
     const device = detectDevice();
     const btn = e ? e.currentTarget : document.getElementById('download-btn');
-    const originalText = btn ? (btn.querySelector('[data-i18n]') ? btn.querySelector('[data-i18n]').innerText : btn.innerText) : 'Download';
-    // Helper to set text inside the span if possible, or direct innerText
-    const setText = (text) => {
+
+    // Prevent multiple clicks
+    if (btn && btn.classList.contains('loading')) return;
+
+    const originalHTML = btn ? btn.innerHTML : '';
+
+    // Helper to show loading state
+    const showLoading = () => {
         if (!btn) return;
-        const span = btn.querySelector('[data-i18n]') || btn.querySelector('span');
-        if (span) span.innerText = text;
-        else btn.innerText = text;
-    }
+        btn.classList.add('loading');
+        btn.disabled = true;
+        const span = btn.querySelector('span');
+        if (span) span.textContent = 'Loading...';
+    };
+
+    // Helper to restore button
+    const restoreButton = () => {
+        if (!btn) return;
+        btn.classList.remove('loading');
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+    };
 
     // Show loading state
-    if (btn) setText('Checking...');
+    showLoading();
 
     // Desktop/iOS redirects (Static for now as requested, concentrating on Android)
     if (device === 'ios' || device === 'macos' || device === 'windows' || device === 'linux') {
-        // Keep existing logic or redirect to releases page for non-Android
         window.open('https://github.com/RyanWez/ahkyaway_mhat-releases/releases', '_blank');
-        if (btn) setText(originalText);
+        restoreButton();
         return;
     }
 
@@ -111,17 +124,17 @@ async function handleDownload(e) {
         // Create a temporary link and click it
         const link = document.createElement('a');
         link.href = url;
-        link.download = ''; // Browser handles filename
+        link.download = '';
         link.target = '_blank';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
-        if (btn) setText(originalText);
+        restoreButton();
     } else {
         // Fallback for web/unknown
         window.open('https://github.com/RyanWez/ahkyaway_mhat-releases/releases', '_blank');
-        if (btn) setText(originalText);
+        restoreButton();
     }
 }
 

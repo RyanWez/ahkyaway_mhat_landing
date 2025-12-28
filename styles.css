@@ -647,6 +647,28 @@ img {
     border-radius: var(--radius-xl);
 }
 
+/* Button Loading State */
+.btn.loading,
+.nav-download.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn.loading .btn-icon,
+.nav-download.loading .nav-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Hero Image */
 .hero-image {
     display: flex;
