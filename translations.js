@@ -19,7 +19,7 @@ const translations = {
             feature4: "Dark & Light Themes",
             download: "Download Now",
             github: "View on GitHub",
-            scroll: "Scroll to explore"
+            scroll: "Scroll"
         },
         screenshots: {
             title: "App Screenshots",
@@ -41,9 +41,9 @@ const translations = {
             name: "အကြွေးမှတ်"
         },
         nav: {
-            home: "ပင်မ",
-            about: "အကြောင်း",
-            download: "ဒေါင်းလုဒ်"
+            home: "Home",
+            about: "About",
+            download: "Download"
         },
         hero: {
             badge: "စီးပွားရေးလုပ်ငန်းငယ်များအတွက်",
@@ -55,7 +55,7 @@ const translations = {
             feature4: "အမှောင်/အလင်း Theme",
             download: "ယခုပဲ ဒေါင်းလုဒ်လုပ်ပါ",
             github: "GitHub တွင် ကြည့်ရန်",
-            scroll: "ဆွဲချပြီး လေ့လာပါ"
+            scroll: "Scroll"
         },
         screenshots: {
             title: "App ပုံများ",
