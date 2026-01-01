@@ -20,58 +20,127 @@
     <link rel="stylesheet" href="../styles.css">
     
     <style>
+        /* Smooth Page Transitions */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            opacity: 0;
+            animation: fadeInPage 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
+        }
+
         /* Privacy Page Specific Styles */
         .page-header {
-            padding: 90px 0 40px;
-            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+            padding: 100px 0 50px;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
             text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeSlideDown 0.8s ease-out 0.2s forwards;
         }
 
         .privacy-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 80px;
+            padding: 20px 24px 100px;
         }
 
+        /* Staggered Animation for Sections */
+        .privacy-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.6s ease-out forwards;
+        }
+
+        /* Generate staggered delays */
+        .privacy-section:nth-child(1) { animation-delay: 0.3s; }
+        .privacy-section:nth-child(2) { animation-delay: 0.4s; }
+        .privacy-section:nth-child(3) { animation-delay: 0.5s; }
+        .privacy-section:nth-child(4) { animation-delay: 0.6s; }
+        .privacy-section:nth-child(5) { animation-delay: 0.7s; }
+        .privacy-section:nth-child(6) { animation-delay: 0.8s; }
+        .privacy-section:nth-child(7) { animation-delay: 0.9s; }
+        .privacy-section:nth-child(8) { animation-delay: 1.0s; }
+
+
         .privacy-content h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 0.5rem;
             color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
 
         .privacy-content h2 {
             font-size: 1.5rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
             color: var(--text-primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .privacy-content h3 {
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
             color: var(--text-primary);
         }
 
         .privacy-content p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8; /* Improve readability */
+            font-size: 1.05rem;
         }
 
         .privacy-content ul {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding-left: 1.5rem;
             color: var(--text-secondary);
         }
 
         .privacy-content li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             line-height: 1.7;
         }
         
         strong {
             color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        code {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Mobile Optimization */
+        @media (max-width: 640px) {
+            .page-header {
+                padding: 80px 0 30px;
+            }
+            .privacy-content {
+                padding: 10px 20px 80px;
+            }
         }
     </style>
 </head>
@@ -111,54 +180,70 @@
         </div>
 
         <div class="privacy-content">
-            <p><strong>AhKyaway Mhat</strong> ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle your data when you use our mobile application.</p>
+            <div class="privacy-section">
+                <p><strong>AhKyaway Mhat</strong> ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle your data when you use our mobile application.</p>
+            </div>
 
-            <h2>1. Data Collection and Storage</h2>
-            <p><strong>AhKyaway Mhat</strong> is primarily an offline-first application. We do not host any central servers to store your personal financial data.</p>
-            <ul>
-                <li><strong>Local Storage</strong>: All data (customers, debts, payments) is stored locally on your device.</li>
-                <li><strong>Encryption</strong>: We use industry-standard encryption (AES) to ensure your data remains secure on your device.</li>
-            </ul>
+            <div class="privacy-section">
+                <h2>1. Data Collection and Storage</h2>
+                <p><strong>AhKyaway Mhat</strong> is primarily an offline-first application. We do not host any central servers to store your personal financial data.</p>
+                <ul>
+                    <li><strong>Local Storage</strong>: All data (customers, debts, payments) is stored locally on your device.</li>
+                    <li><strong>Encryption</strong>: We use industry-standard encryption (AES) to ensure your data remains secure on your device.</li>
+                </ul>
+            </div>
 
-            <h2>2. Google Drive Data Backup (Cloud Service)</h2>
-            <p>We offer an optional <strong>Cloud Backup & Restore</strong> feature that allows you to safeguard your data. This feature utilizes Google Drive API services.</p>
-            
-            <h3>How we use your Google User Data:</h3>
-            <ul>
-                <li><strong>Access</strong>: We ask for permission to access your Google Drive App Data folder (<code>https://www.googleapis.com/auth/drive.appdata</code>).</li>
-                <li><strong>Use</strong>: This permission is used <strong>strictly</strong> to upload a backup file (<code>ahkyaway_mhat_backup.json</code>) of your app data and to restore (download) that specific file when you request it.</li>
-                <li><strong>Storage</strong>: The backup file is stored in a private "App Data" folder within your own Google Drive. We cannot see or access any other files in your Google Drive.</li>
-                <li><strong>Sharing</strong>: We do not transfer, sell, or share your Google user data with any third parties or advertising platforms. Your data remains strictly between your device and your personal Google Drive account.</li>
-            </ul>
+            <div class="privacy-section">
+                <h2>2. Google Drive Data Backup (Cloud Service)</h2>
+                <p>We offer an optional <strong>Cloud Backup & Restore</strong> feature that allows you to safeguard your data. This feature utilizes Google Drive API services.</p>
+                
+                <h3>How we use your Google User Data:</h3>
+                <ul>
+                    <li><strong>Access</strong>: We ask for permission to access your Google Drive App Data folder (<code>https://www.googleapis.com/auth/drive.appdata</code>).</li>
+                    <li><strong>Use</strong>: This permission is used <strong>strictly</strong> to upload a backup file (<code>ahkyaway_mhat_backup.json</code>) of your app data and to restore (download) that specific file when you request it.</li>
+                    <li><strong>Storage</strong>: The backup file is stored in a private "App Data" folder within your own Google Drive. We cannot see or access any other files in your Google Drive.</li>
+                    <li><strong>Sharing</strong>: We do not transfer, sell, or share your Google user data with any third parties or advertising platforms. Your data remains strictly between your device and your personal Google Drive account.</li>
+                </ul>
+            </div>
 
-            <h2>3. Information We Do Not Collect</h2>
-            <ul>
-                <li>We do not collect your personal phone number, contacts list, or location data for tracking purposes.</li>
-                <li>We do not collect usage analytics that can personally identify you.</li>
-            </ul>
+            <div class="privacy-section">
+                <h2>3. Information We Do Not Collect</h2>
+                <ul>
+                    <li>We do not collect your personal phone number, contacts list, or location data for tracking purposes.</li>
+                    <li>We do not collect usage analytics that can personally identify you.</li>
+                </ul>
+            </div>
 
-            <h2>4. Internet Access</h2>
-            <p>The application requires internet access for the following limited purposes:</p>
-            <ul>
-                <li>Performing Cloud Backup and Restore operations (connecting to Google Drive).</li>
-                <li>Checking for application updates via GitHub API.</li>
-            </ul>
+            <div class="privacy-section">
+                <h2>4. Internet Access</h2>
+                <p>The application requires internet access for the following limited purposes:</p>
+                <ul>
+                    <li>Performing Cloud Backup and Restore operations (connecting to Google Drive).</li>
+                    <li>Checking for application updates via GitHub API.</li>
+                </ul>
+            </div>
 
-            <h2>5. Security</h2>
-            <p>We take the security of your data seriously.</p>
-            <ul>
-                <li><strong>At Rest</strong>: Data on your device is encrypted using `FlutterSecureStorage`.</li>
-                <li><strong>In Transit</strong>: Data transferred to/from Google Drive is protected by Google's secure SSL/TLS protocols.</li>
-            </ul>
+            <div class="privacy-section">
+                <h2>5. Security</h2>
+                <p>We take the security of your data seriously.</p>
+                <ul>
+                    <li><strong>At Rest</strong>: Data on your device is encrypted using `FlutterSecureStorage`.</li>
+                    <li><strong>In Transit</strong>: Data transferred to/from Google Drive is protected by Google's secure SSL/TLS protocols.</li>
+                </ul>
+            </div>
 
-            <h2>6. Changes to This Policy</h2>
-            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <div class="privacy-section">
+                <h2>6. Changes to This Policy</h2>
+                <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            </div>
 
-            <h2>7. Contact Us</h2>
-            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
-            <ul>
-                <li><strong>Email</strong>: ryanwez25@gmail.com</li>
-            </ul>
+            <div class="privacy-section">
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
+                <ul>
+                    <li><strong>Email</strong>: ryanwez25@gmail.com</li>
+                </ul>
+            </div>
         </div>
     </main>
 
@@ -168,29 +253,37 @@
         </div>
     </footer>
 
-    <!-- Minimal Script for Theme Toggle -->
+    <!-- Script for Theme Toggle -->
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
 
-        // Check for saved theme preference, otherwise use system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        // Function to apply theme
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
 
+        // Initialize Theme
+        const savedTheme = localStorage.getItem('theme');
+        // Default to dark if no match found, since styles default to dark
+        const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        
         if (savedTheme) {
-            html.setAttribute('data-theme', savedTheme);
+            applyTheme(savedTheme);
         } else {
-            // Default to dark as per style.css variables, but check system if desired
-            // styles.css defaults to dark. To follow system:
-            // if (systemTheme === 'light') html.setAttribute('data-theme', 'light');
+            // Optional: Auto-detect system preference if desired
+            // applyTheme(systemTheme); 
         }
 
         themeToggle.addEventListener('click', () => {
+            // Disable transitions momentarily to prevent glitchy background changes if we had global generic transitions
+            // but here we want smooth, so we keep them, assuming css transitions are set on background-color
+            
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
         });
     </script>
 </body>
