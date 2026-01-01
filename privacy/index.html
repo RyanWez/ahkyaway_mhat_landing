@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | AhKyaway Mhat</title>
+    <meta name="description" content="Privacy Policy for AhKyaway Mhat application. Understand how we handle your data locally and securely.">
+    <meta name="robots" content="noindex">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/icons/app_icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        /* Privacy Page Specific Styles */
+        .page-header {
+            padding: 90px 0 40px;
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+            text-align: center;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .privacy-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .privacy-content h3 {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .privacy-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .privacy-content ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .privacy-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        
+        strong {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Navigation (Simplified) -->
+    <nav class="floating-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+            
+            <!-- Control Buttons -->
+            <div class="nav-controls">
+                 <button id="theme-toggle" class="nav-control-btn" aria-label="Toggle Theme">
+                    <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                    </svg>
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p style="color: var(--text-secondary)">Last Updated: January 2, 2026</p>
+        </div>
+
+        <div class="privacy-content">
+            <p><strong>AhKyaway Mhat</strong> ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle your data when you use our mobile application.</p>
+
+            <h2>1. Data Collection and Storage</h2>
+            <p><strong>AhKyaway Mhat</strong> is primarily an offline-first application. We do not host any central servers to store your personal financial data.</p>
+            <ul>
+                <li><strong>Local Storage</strong>: All data (customers, debts, payments) is stored locally on your device.</li>
+                <li><strong>Encryption</strong>: We use industry-standard encryption (AES) to ensure your data remains secure on your device.</li>
+            </ul>
+
+            <h2>2. Google Drive Data Backup (Cloud Service)</h2>
+            <p>We offer an optional <strong>Cloud Backup & Restore</strong> feature that allows you to safeguard your data. This feature utilizes Google Drive API services.</p>
+            
+            <h3>How we use your Google User Data:</h3>
+            <ul>
+                <li><strong>Access</strong>: We ask for permission to access your Google Drive App Data folder (<code>https://www.googleapis.com/auth/drive.appdata</code>).</li>
+                <li><strong>Use</strong>: This permission is used <strong>strictly</strong> to upload a backup file (<code>ahkyaway_mhat_backup.json</code>) of your app data and to restore (download) that specific file when you request it.</li>
+                <li><strong>Storage</strong>: The backup file is stored in a private "App Data" folder within your own Google Drive. We cannot see or access any other files in your Google Drive.</li>
+                <li><strong>Sharing</strong>: We do not transfer, sell, or share your Google user data with any third parties or advertising platforms. Your data remains strictly between your device and your personal Google Drive account.</li>
+            </ul>
+
+            <h2>3. Information We Do Not Collect</h2>
+            <ul>
+                <li>We do not collect your personal phone number, contacts list, or location data for tracking purposes.</li>
+                <li>We do not collect usage analytics that can personally identify you.</li>
+            </ul>
+
+            <h2>4. Internet Access</h2>
+            <p>The application requires internet access for the following limited purposes:</p>
+            <ul>
+                <li>Performing Cloud Backup and Restore operations (connecting to Google Drive).</li>
+                <li>Checking for application updates via GitHub API.</li>
+            </ul>
+
+            <h2>5. Security</h2>
+            <p>We take the security of your data seriously.</p>
+            <ul>
+                <li><strong>At Rest</strong>: Data on your device is encrypted using `FlutterSecureStorage`.</li>
+                <li><strong>In Transit</strong>: Data transferred to/from Google Drive is protected by Google's secure SSL/TLS protocols.</li>
+            </ul>
+
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
+            <ul>
+                <li><strong>Email</strong>: ryanwez25@gmail.com</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-copyright">© 2026 AhKyaway Mhat.</p>
+        </div>
+    </footer>
+
+    <!-- Minimal Script for Theme Toggle -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
+        if (savedTheme) {
+            html.setAttribute('data-theme', savedTheme);
+        } else {
+            // Default to dark as per style.css variables, but check system if desired
+            // styles.css defaults to dark. To follow system:
+            // if (systemTheme === 'light') html.setAttribute('data-theme', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+
+</html>
