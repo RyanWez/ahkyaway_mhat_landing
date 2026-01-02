@@ -319,7 +319,12 @@ class Carousel {
 
     updateDots() {
         this.dots.forEach((dot, i) => {
+            // Mark active dot
             dot.classList.toggle('active', i === this.currentIndex);
+            
+            // Mark adjacent dots (prev and next) for mobile visibility
+            const isAdjacent = (i === this.currentIndex - 1) || (i === this.currentIndex + 1);
+            dot.classList.toggle('adjacent', isAdjacent);
         });
     }
 
